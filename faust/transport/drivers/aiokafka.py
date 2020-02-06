@@ -705,7 +705,7 @@ class Producer(base.Producer):
         )
 
     @property
-    def _producer_type(self) -> Type[aiokafka.BaseProducer]:
+    def _producer_type(self):# -> Type[aiokafka.BaseProducer]:
         if self.app.in_transaction:
             return aiokafka.MultiTXNProducer
         return aiokafka.AIOKafkaProducer
@@ -747,7 +747,7 @@ class Producer(base.Producer):
         )
         await producer.client.force_metadata_update()  # Fixes #499
 
-    def _ensure_producer(self) -> aiokafka.BaseProducer:
+    def _ensure_producer(self):# -> aiokafka.BaseProducer:
         if self._producer is None:
             raise NotReady('Producer service not yet started')
         return self._producer
