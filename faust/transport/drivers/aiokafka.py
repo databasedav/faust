@@ -85,9 +85,9 @@ from faust.utils.tracing import (
 
 __all__ = ['Consumer', 'Producer', 'Transport']
 
-if not hasattr(aiokafka, '__robinhood__'):  # pragma: no cover
-    raise RuntimeError(
-        'Please install robinhood-aiokafka, not aiokafka')
+# if not hasattr(aiokafka, '__robinhood__'):  # pragma: no cover
+#     raise RuntimeError(
+#         'Please install robinhood-aiokafka, not aiokafka')
 
 logger = get_logger(__name__)
 
